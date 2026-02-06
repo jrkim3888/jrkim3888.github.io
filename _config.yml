@@ -112,16 +112,8 @@ tag_archive:
   type: liquid
   path: /tags/
 
-# Comments (giscus)
+# Comments (Disqus - allows anonymous guest comments)
 comments:
-  provider: "giscus"
-  giscus:
-    repo_id: "R_kgDORGl8zQ"
-    category_name: "Announcements"
-    category_id: "DIC_kwDORGl8zc4C18m-"
-    mapping: "pathname"
-    reactions_enabled: "1"
-    emit_metadata: "0"
-    input_position: "bottom"
-    theme: "light"
-    lang: "ko"
+  provider: "disqus"
+  disqus:
+    shortname: "jrkim3888-novel"  # TODO: Update after creating site at disqus.com/admin/create
