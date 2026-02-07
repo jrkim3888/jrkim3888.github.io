@@ -116,6 +116,7 @@ tag_archive:
 comments:
   provider: "giscus"
   giscus:
+    repo: "jrkim3888/jrkim3888.github.io"
     repo_id: "R_kgDORGl8zQ"
     category_name: "Announcements"
     category_id: "DIC_kwDORGl8zc4C18m-"
