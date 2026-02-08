@@ -108,13 +108,6 @@ defaults:
       layout: single
       author_profile: true
 
-# Analytics (GA4 ID 발급 후 주석 해제)
-# analytics:
-#   provider: "google-gtag"
-#   google:
-#     tracking_id: "G-XXXXXXXXXX"
-#     anonymize_ip: false
-
 category_archive:
   type: liquid
   path: /categories/
