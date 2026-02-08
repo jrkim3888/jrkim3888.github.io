@@ -108,6 +108,13 @@ defaults:
       layout: single
       author_profile: true
 
+# Analytics (Google Analytics 4)
+analytics:
+  provider: "google-gtag"
+  google:
+    tracking_id: "G-RZK7HW7VJB"
+    anonymize_ip: false
+
 category_archive:
   type: liquid
   path: /categories/
