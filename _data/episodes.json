@@ -5,13 +5,25 @@
     "arc_number": 1,
     "title": "밤에 피어나는 장미 제1화",
     "published_at": "2026-02-19T12:00:00.000000",
-    "url": "/novel/arc-1/episode-001/"
+    "url": "/novel/arc-1/episode-001/",
+    "character_count": 7349
   },
   {
-    "chapter": 1,
-    "title": "길드 일상 (처참한 위치)",
-    "arc": 1,
-    "date": "2026-02-19",
-    "character_count": 2344
+    "chapter_id": "CH002",
+    "episode_number": 2,
+    "arc_number": 1,
+    "title": "밤에 피어나는 장미 제2화",
+    "published_at": "2026-02-19T12:54:00.000000",
+    "url": "/novel/arc-1/episode-002/",
+    "character_count": 7068
+  },
+  {
+    "chapter_id": "CH003",
+    "episode_number": 3,
+    "arc_number": 1,
+    "title": "밤에 피어나는 장미 제3화",
+    "published_at": "2026-02-19T15:00:00.000000",
+    "url": "/novel/arc-1/episode-003/",
+    "character_count": 6433
   }
 ]
