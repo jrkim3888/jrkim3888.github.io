@@ -1,26 +1,10 @@
 [
   {
-    "chapter_id": "CH013",
-    "episode_number": 13,
-    "arc_number": 2,
-    "title": "밤에 피어나는 장미 제13화",
-    "published_at": "2026-02-19T09:04:14.470245",
-    "url": "/novel/arc-2/episode-013/"
-  },
-  {
-    "chapter_id": "CH014",
-    "episode_number": 14,
-    "arc_number": 2,
-    "title": "밤에 피어나는 장미 제14화",
-    "published_at": "2026-02-19T09:04:14.471671",
-    "url": "/novel/arc-2/episode-014/"
-  },
-  {
-    "chapter_id": "CH015",
-    "episode_number": 15,
-    "arc_number": 2,
-    "title": "밤에 피어나는 장미 제15화",
-    "published_at": "2026-02-19T10:15:00.000000",
-    "url": "/novel/arc-2/episode-015/"
+    "chapter_id": "CH001",
+    "episode_number": 1,
+    "arc_number": 1,
+    "title": "밤에 피어나는 장미 제1화",
+    "published_at": "2026-02-19T12:00:00.000000",
+    "url": "/novel/arc-1/episode-001/"
   }
 ]
