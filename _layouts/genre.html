@@ -60,7 +60,9 @@ author_profile: true
 
             <div class="novel-card">
               <div class="novel-card__cover">
-                {% if novel_info.cover_image %}
+                {% if novel_info.cover_card %}
+                  <img src="{{ novel_info.cover_card | relative_url }}" alt="{{ novel_name }}">
+                {% elsif novel_info.cover_image %}
                   <img src="{{ novel_info.cover_image | relative_url }}" alt="{{ novel_name }}">
                 {% else %}
                   <div class="novel-card__cover-placeholder">

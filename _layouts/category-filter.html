@@ -40,7 +40,8 @@ author_profile: true
 
     {% assign entries_layout = page.entries_layout | default: 'list' %}
     {% for cat in sorted_cats %}
-      {% assign novel_info = site.data.novels[cat[0]] %}
+      {% assign cat_name = cat[0] %}
+      {% assign novel_info = site.data.novels[cat_name] %}
       <section class="catfilter-section" data-category="{{ cat[0] | slugify }}" style="display:none;">
         <div class="catfilter-header">
           <div class="catfilter-header__text">
@@ -51,7 +52,9 @@ author_profile: true
             <span class="catfilter-header__count">총 {{ cat[1].size }}화</span>
           </div>
           <div class="catfilter-header__thumb">
-            {% if novel_info.cover_image %}
+            {% if novel_info.cover_thumb %}
+              <img src="{{ novel_info.cover_thumb | relative_url }}" alt="{{ cat[0] }}">
+            {% elsif novel_info.cover_image %}
               <img src="{{ novel_info.cover_image | relative_url }}" alt="{{ cat[0] }}">
             {% else %}
               <div class="catfilter-header__thumb-placeholder">

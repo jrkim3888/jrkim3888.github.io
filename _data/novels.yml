@@ -1,5 +1,7 @@
 밤에 피어나는 장미:
-  description: "주근깨 가득한 하급 용병 로잘린드. 어느 날 얼굴을 바꾸는 능력을 얻고, 복수를 위해 귀족 사교계에 잠입한다."
-  # cover_image: /assets/images/novel-cover.jpg
-  genre: 로맨스
-  subgenre: [복수극, 변신]
+  description: "주근깨 가득한 하급 용병 로잘린드. 어느 날 기억을 흡수하면 미모를 얻을 수 있는 능력을 알게되고, 복수를 위해 귀족 사교계에 잠입한다."
+  cover_image: /assets/images/rose_cover.png
+  cover_card: /assets/images/rose_cover_card.png
+  cover_thumb: /assets/images/rose_cover_thumb.png
+  genre: 판타지
+  subgenre: [로맨스, 복수극, 서양풍]
