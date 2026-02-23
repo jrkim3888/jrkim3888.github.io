@@ -1,0 +1,94 @@
+---
+layout: archive
+---
+
+{{ content }}
+
+<h3 class="archive__subtitle">연재 작품</h3>
+
+<div class="novel-cards" id="novel-cards">
+  {% for category in site.categories %}
+    {% assign cat_name = category[0] %}
+    {% assign cat_posts = category[1] | sort: "chapter" %}
+    {% assign novel_info = site.data.novels[cat_name] %}
+    {% assign recent = category[1] | sort: "chapter" | reverse | slice: 0, 3 %}
+
+    <div class="novel-card">
+      <div class="novel-card__cover">
+        {% if novel_info.cover_image %}
+          <img src="{{ novel_info.cover_image | relative_url }}" alt="{{ cat_name }}">
+        {% else %}
+          <div class="novel-card__cover-placeholder">
+            <span>{{ cat_name }}</span>
+          </div>
+        {% endif %}
+      </div>
+      <div class="novel-card__body">
+        <h3 class="novel-card__title">
+          <a href="{{ cat_posts.first.url | relative_url }}">{{ cat_name }}</a>
+        </h3>
+        {% if novel_info.description %}
+          <p class="novel-card__desc">{{ novel_info.description }}</p>
+        {% endif %}
+        <p class="novel-card__count">총 {{ cat_posts.size }}화 연재중</p>
+        <ul class="novel-card__recent">
+          {% for post in recent %}
+            <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<nav class="novel-pagination" id="novel-pagination"></nav>
+
+<script>
+(function() {
+  var PER_PAGE = 6;
+  var container = document.getElementById('novel-cards');
+  var paginationEl = document.getElementById('novel-pagination');
+  var cards = Array.prototype.slice.call(container.querySelectorAll('.novel-card'));
+  var totalPages = Math.ceil(cards.length / PER_PAGE);
+  var currentPage = 1;
+
+  if (totalPages <= 1) {
+    paginationEl.style.display = 'none';
+    return;
+  }
+
+  function render(page) {
+    currentPage = page;
+    var start = (page - 1) * PER_PAGE;
+    var end = start + PER_PAGE;
+
+    cards.forEach(function(card, i) {
+      card.style.display = (i >= start && i < end) ? '' : 'none';
+    });
+
+    var html = '';
+    html += '<button class="novel-pagination__btn" data-page="prev"' +
+            (page <= 1 ? ' disabled' : '') + '>&lsaquo;</button>';
+    for (var p = 1; p <= totalPages; p++) {
+      html += '<button class="novel-pagination__btn' +
+              (p === page ? ' novel-pagination__btn--active' : '') +
+              '" data-page="' + p + '">' + p + '</button>';
+    }
+    html += '<button class="novel-pagination__btn" data-page="next"' +
+            (page >= totalPages ? ' disabled' : '') + '>&rsaquo;</button>';
+    paginationEl.innerHTML = html;
+  }
+
+  paginationEl.addEventListener('click', function(e) {
+    var btn = e.target.closest('.novel-pagination__btn');
+    if (!btn || btn.disabled) return;
+    var action = btn.getAttribute('data-page');
+    if (action === 'prev') render(currentPage - 1);
+    else if (action === 'next') render(currentPage + 1);
+    else render(parseInt(action, 10));
+    container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  render(1);
+})();
+</script>

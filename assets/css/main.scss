@@ -427,3 +427,456 @@ body {
 a, .btn, .greedy-nav a, .archive__item-title a {
   transition: all 0.2s ease;
 }
+
+/* ============================================
+   Novel Card View – 홈 페이지 카드형 연재 목록
+   ============================================ */
+
+.novel-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.novel-card {
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  transition: box-shadow 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.novel-card__cover {
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.novel-card__cover-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1e293b 0%, #334155 60%, #475569 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+}
+
+.novel-card__body {
+  padding: 1.25rem;
+}
+
+.novel-card__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+  color: $text-color;
+  letter-spacing: -0.02em;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+.novel-card__desc {
+  font-size: 0.875rem;
+  color: $muted-text-color;
+  line-height: 1.6;
+  margin: 0 0 0.75rem;
+  word-break: keep-all;
+}
+
+.novel-card__count {
+  font-size: 0.8rem;
+  color: $muted-text-color;
+  font-weight: 600;
+  margin: 0 0 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.novel-card__recent {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    padding: 0.4rem 0;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #f8fafc;
+    }
+
+    a {
+      font-size: 0.85rem;
+      color: $text-color;
+      text-decoration: none;
+      display: block;
+      transition: color 0.15s ease;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+}
+
+/* -- Pagination -- */
+.novel-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 2rem;
+  padding-bottom: 1rem;
+}
+
+.novel-pagination__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+  height: 2rem;
+  padding: 0 0.5rem;
+  font-size: 0.85rem;
+  font-family: inherit;
+  font-weight: 500;
+  color: $muted-text-color;
+  background: none;
+  border: 1px solid $border-color;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+
+  &:hover:not(:disabled) {
+    color: $text-color;
+    border-color: $text-color;
+  }
+
+  &--active {
+    color: #fff;
+    background: $text-color;
+    border-color: $text-color;
+
+    &:hover {
+      color: #fff !important;
+    }
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+}
+
+@media (max-width: 768px) {
+  .novel-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   Category Filter – MM 사이드바 내 카테고리 필터
+   ============================================ */
+
+/* -- 사이드바 내 카테고리 네비게이션 -- */
+.catfilter-nav {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid $border-color;
+
+  &__title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: $muted-text-color;
+    margin: 0 0 0.6rem;
+    padding: 0 0.25rem;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.45rem 0.6rem;
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: $text-color;
+    background: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    text-align: left;
+    line-height: 1.4;
+    word-break: keep-all;
+
+    &:hover {
+      background: #f1f5f9;
+    }
+
+    &--active {
+      color: #fff;
+      background: $text-color;
+
+      &:hover {
+        background: $text-color;
+      }
+
+      .catfilter-nav__count {
+        color: rgba(255, 255, 255, 0.7);
+      }
+    }
+  }
+
+  &__count {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: $muted-text-color;
+    flex-shrink: 0;
+    margin-left: 0.5rem;
+  }
+}
+
+/* -- 카테고리 섹션 헤더 (썸네일 + 제목 + 소개) -- */
+.catfilter-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid $border-color;
+
+  &__text {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: $text-color;
+    margin: 0 0 0.35rem;
+    line-height: 1.3;
+  }
+
+  &__desc {
+    font-size: 0.85rem;
+    color: $muted-text-color;
+    line-height: 1.6;
+    margin: 0 0 0.3rem;
+    word-break: keep-all;
+  }
+
+  &__count {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: $muted-text-color;
+  }
+
+  &__thumb {
+    flex-shrink: 0;
+    width: 72px;
+    height: 72px;
+    border-radius: 8px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__thumb-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1e293b 0%, #334155 60%, #475569 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+  }
+}
+
+/* -- 포스트 목록 (컴팩트 한 줄) -- */
+.catfilter-posts {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  &__item {
+    border-bottom: 1px solid #f1f5f9;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.6rem 0.25rem;
+    text-decoration: none;
+    transition: background 0.12s ease;
+    border-radius: 4px;
+
+    &:hover {
+      background: #f8fafc;
+    }
+  }
+
+  &__title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: $text-color;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+  }
+
+  &__date {
+    font-size: 0.75rem;
+    color: $muted-text-color;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+}
+
+/* ============================================
+   Genre Page – 장르별 소설 그룹핑
+   ============================================ */
+
+.genre-section {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 2px solid $border-color;
+
+  &:first-of-type {
+    margin-top: 1rem;
+    padding-top: 0;
+    border-top: none;
+  }
+
+  &__title {
+    font-size: 1.375rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: $text-color;
+    margin: 0 0 1.25rem;
+  }
+
+  &__count {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: $muted-text-color;
+    margin-left: 0.25rem;
+
+    &::before { content: "("; }
+    &::after  { content: ")"; }
+  }
+}
+
+.genre-tag {
+  display: inline-block;
+  padding: 0.15em 0.6em;
+  margin: 0.15em 0.2em 0.15em 0;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: $primary-color;
+  background: rgba(99, 102, 241, 0.08);
+  border-radius: 9999px;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.novel-card__tags {
+  margin: 0 0 0.75rem;
+}
+
+/* -- 카테고리 페이지네이션 -- */
+.catfilter-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2rem;
+    height: 2rem;
+    padding: 0 0.5rem;
+    font-size: 0.85rem;
+    font-family: inherit;
+    font-weight: 500;
+    color: $muted-text-color;
+    background: none;
+    border: 1px solid $border-color;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+
+    &:hover:not(:disabled) {
+      color: $text-color;
+      border-color: $text-color;
+    }
+
+    &--active {
+      color: #fff;
+      background: $text-color;
+      border-color: $text-color;
+
+      &:hover {
+        color: #fff !important;
+      }
+    }
+
+    &:disabled {
+      opacity: 0.3;
+      cursor: default;
+    }
+  }
+}

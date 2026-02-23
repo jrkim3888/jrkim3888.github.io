@@ -1,0 +1,102 @@
+---
+layout: default
+author_profile: true
+---
+
+{% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
+  {% include page__hero.html %}
+{% elsif page.header.video.id and page.header.video.provider %}
+  {% include page__hero_video.html %}
+{% endif %}
+
+<div id="main" role="main">
+  <div class="sidebar sticky">
+    {% include author-profile.html %}
+  </div>
+
+  <div class="archive">
+    {% unless page.header.overlay_color or page.header.overlay_image %}
+      <h1 id="page-title" class="page__title">{{ page.title }}</h1>
+    {% endunless %}
+
+    {% comment %}
+      novels.yml에서 genre별로 그룹핑.
+      Liquid에는 group_by가 없으므로 먼저 고유 장르 목록을 만든 뒤 순회.
+    {% endcomment %}
+
+    {% assign genre_list = "" %}
+    {% for novel in site.data.novels %}
+      {% assign info = novel[1] %}
+      {% if info.genre %}
+        {% assign genre_list = genre_list | append: info.genre | append: "," %}
+      {% endif %}
+    {% endfor %}
+    {% assign genre_array = genre_list | split: "," | uniq | sort %}
+
+    {% for genre in genre_array %}
+      {% if genre == "" %}{% continue %}{% endif %}
+
+      {% comment %} 해당 장르의 소설 수 카운트 {% endcomment %}
+      {% assign genre_count = 0 %}
+      {% for novel in site.data.novels %}
+        {% if novel[1].genre == genre %}
+          {% assign genre_count = genre_count | plus: 1 %}
+        {% endif %}
+      {% endfor %}
+
+      <section class="genre-section">
+        <h2 class="genre-section__title">{{ genre }} <span class="genre-section__count">{{ genre_count }}</span></h2>
+
+        <div class="novel-cards">
+          {% for novel in site.data.novels %}
+            {% assign novel_name = novel[0] %}
+            {% assign novel_info = novel[1] %}
+            {% unless novel_info.genre == genre %}{% continue %}{% endunless %}
+
+            {% assign cat_posts = site.categories[novel_name] | sort: "chapter" %}
+            {% assign post_count = cat_posts | size %}
+            {% assign recent = site.categories[novel_name] | sort: "chapter" | reverse | slice: 0, 3 %}
+            {% assign novel_slug = novel_name | slugify %}
+
+            <div class="novel-card">
+              <div class="novel-card__cover">
+                {% if novel_info.cover_image %}
+                  <img src="{{ novel_info.cover_image | relative_url }}" alt="{{ novel_name }}">
+                {% else %}
+                  <div class="novel-card__cover-placeholder">
+                    <span>{{ novel_name }}</span>
+                  </div>
+                {% endif %}
+              </div>
+              <div class="novel-card__body">
+                <h3 class="novel-card__title">
+                  <a href="{{ '/categories/#' | append: novel_slug | relative_url }}">{{ novel_name }}</a>
+                </h3>
+                {% if novel_info.description %}
+                  <p class="novel-card__desc">{{ novel_info.description }}</p>
+                {% endif %}
+                {% if novel_info.subgenre %}
+                  <div class="novel-card__tags">
+                    {% for sg in novel_info.subgenre %}
+                      <span class="genre-tag">{{ sg }}</span>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+                {% if post_count > 0 %}
+                  <p class="novel-card__count">총 {{ post_count }}화 연재중</p>
+                  <ul class="novel-card__recent">
+                    {% for post in recent %}
+                      <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+                    {% endfor %}
+                  </ul>
+                {% else %}
+                  <p class="novel-card__count">준비중</p>
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </section>
+    {% endfor %}
+  </div>
+</div>

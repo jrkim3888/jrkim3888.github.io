@@ -1,0 +1,203 @@
+---
+layout: default
+author_profile: true
+---
+
+{% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
+  {% include page__hero.html %}
+{% elsif page.header.video.id and page.header.video.provider %}
+  {% include page__hero_video.html %}
+{% endif %}
+
+<div id="main" role="main">
+  <!-- MM 기본 사이드바 (author profile) + 카테고리 필터 -->
+  <div class="sidebar sticky">
+    {% include author-profile.html %}
+
+    <nav class="catfilter-nav" aria-label="카테고리 필터">
+      <h3 class="catfilter-nav__title">카테고리</h3>
+      <ul class="catfilter-nav__list">
+        {% assign sorted_cats = site.categories | sort %}
+        {% for cat in sorted_cats %}
+          <li>
+            <button class="catfilter-nav__btn"
+                    data-category="{{ cat[0] | slugify }}"
+                    type="button">
+              {{ cat[0] }}
+              <span class="catfilter-nav__count">{{ cat[1].size }}</span>
+            </button>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+
+  <!-- 우측: 포스트 목록 (MM archive 영역) -->
+  <div class="archive">
+    {% unless page.header.overlay_color or page.header.overlay_image %}
+      <h1 id="page-title" class="page__title">{{ page.title }}</h1>
+    {% endunless %}
+
+    {% assign entries_layout = page.entries_layout | default: 'list' %}
+    {% for cat in sorted_cats %}
+      {% assign novel_info = site.data.novels[cat[0]] %}
+      <section class="catfilter-section" data-category="{{ cat[0] | slugify }}" style="display:none;">
+        <div class="catfilter-header">
+          <div class="catfilter-header__text">
+            <h2 class="catfilter-header__title">{{ cat[0] }}</h2>
+            {% if novel_info.description %}
+              <p class="catfilter-header__desc">{{ novel_info.description }}</p>
+            {% endif %}
+            <span class="catfilter-header__count">총 {{ cat[1].size }}화</span>
+          </div>
+          <div class="catfilter-header__thumb">
+            {% if novel_info.cover_image %}
+              <img src="{{ novel_info.cover_image | relative_url }}" alt="{{ cat[0] }}">
+            {% else %}
+              <div class="catfilter-header__thumb-placeholder">
+                <span>{{ cat[0] | truncate: 6, "" }}</span>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+        <ul class="catfilter-posts">
+          {% for post in cat[1] %}
+            <li class="catfilter-posts__item" data-date="{{ post.date | date: '%s' }}" data-title="{{ post.title }}">
+              <a href="{{ post.url | relative_url }}" class="catfilter-posts__link">
+                <span class="catfilter-posts__title">{{ post.title }}</span>
+                <time class="catfilter-posts__date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y.%m.%d" }}</time>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+        <nav class="catfilter-pagination" aria-label="페이지네이션"></nav>
+      </section>
+    {% endfor %}
+  </div>
+</div>
+
+<script>
+(function() {
+  var PER_PAGE = 20;
+  var buttons = document.querySelectorAll('.catfilter-nav__btn');
+  var sections = document.querySelectorAll('.catfilter-section');
+  var pageState = {}; // slug → current page
+  var sorted = {};    // slug → already sorted flag
+
+  // 날짜 내림차순, 같은 날짜면 제목 내림차순 (숫자 인식)
+  function sortSection(section) {
+    var slug = section.getAttribute('data-category');
+    if (sorted[slug]) return;
+    var list = section.querySelector('.catfilter-posts');
+    var items = Array.prototype.slice.call(list.querySelectorAll('.catfilter-posts__item'));
+    items.sort(function(a, b) {
+      var da = parseInt(a.getAttribute('data-date'), 10);
+      var db = parseInt(b.getAttribute('data-date'), 10);
+      if (db !== da) return db - da; // 날짜 내림차순
+      var ta = a.getAttribute('data-title');
+      var tb = b.getAttribute('data-title');
+      return tb.localeCompare(ta, 'ko', { numeric: true }); // 제목 내림차순 (숫자 인식)
+    });
+    items.forEach(function(item) { list.appendChild(item); });
+    sorted[slug] = true;
+  }
+
+  function paginate(section) {
+    sortSection(section);
+    var slug = section.getAttribute('data-category');
+    var items = section.querySelectorAll('.catfilter-posts__item');
+    var total = items.length;
+    var totalPages = Math.ceil(total / PER_PAGE);
+    var page = pageState[slug] || 1;
+    var start = (page - 1) * PER_PAGE;
+    var end = start + PER_PAGE;
+
+    for (var i = 0; i < items.length; i++) {
+      items[i].style.display = (i >= start && i < end) ? '' : 'none';
+    }
+
+    var nav = section.querySelector('.catfilter-pagination');
+    if (totalPages <= 1) { nav.innerHTML = ''; return; }
+
+    var html = '';
+    html += '<button class="catfilter-pagination__btn" data-page="prev"' +
+            (page <= 1 ? ' disabled' : '') + '>&lsaquo;</button>';
+    for (var p = 1; p <= totalPages; p++) {
+      html += '<button class="catfilter-pagination__btn' +
+              (p === page ? ' catfilter-pagination__btn--active' : '') +
+              '" data-page="' + p + '">' + p + '</button>';
+    }
+    html += '<button class="catfilter-pagination__btn" data-page="next"' +
+            (page >= totalPages ? ' disabled' : '') + '>&rsaquo;</button>';
+    nav.innerHTML = html;
+  }
+
+  function activate(slug) {
+    buttons.forEach(function(btn) {
+      btn.classList.toggle('catfilter-nav__btn--active', btn.getAttribute('data-category') === slug);
+    });
+    sections.forEach(function(sec) {
+      var match = sec.getAttribute('data-category') === slug;
+      sec.style.display = match ? '' : 'none';
+      if (match) paginate(sec);
+    });
+  }
+
+  function fromHash() {
+    var hash = decodeURIComponent(window.location.hash.replace('#', ''));
+    if (hash) {
+      var found = false;
+      buttons.forEach(function(btn) {
+        if (btn.getAttribute('data-category') === hash) found = true;
+      });
+      if (found) return hash;
+      var slug = hash.toLowerCase().replace(/[^가-힣a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+      buttons.forEach(function(btn) {
+        if (btn.getAttribute('data-category') === slug) found = true;
+      });
+      if (found) return slug;
+    }
+    return null;
+  }
+
+  // 카테고리 버튼 클릭
+  buttons.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var slug = this.getAttribute('data-category');
+      activate(slug);
+      history.replaceState(null, '', '#' + slug);
+    });
+  });
+
+  // 페이지네이션 클릭 (이벤트 위임)
+  document.addEventListener('click', function(e) {
+    var btn = e.target.closest('.catfilter-pagination__btn');
+    if (!btn || btn.disabled) return;
+    var section = btn.closest('.catfilter-section');
+    var slug = section.getAttribute('data-category');
+    var page = pageState[slug] || 1;
+    var action = btn.getAttribute('data-page');
+
+    if (action === 'prev') page--;
+    else if (action === 'next') page++;
+    else page = parseInt(action, 10);
+
+    pageState[slug] = page;
+    paginate(section);
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  // hash 변경
+  window.addEventListener('hashchange', function() {
+    var slug = fromHash();
+    if (slug) activate(slug);
+  });
+
+  // 초기화
+  var initial = fromHash();
+  if (!initial && buttons.length > 0) {
+    initial = buttons[0].getAttribute('data-category');
+  }
+  if (initial) activate(initial);
+})();
+</script>
