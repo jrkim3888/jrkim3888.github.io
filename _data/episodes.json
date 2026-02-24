@@ -187,5 +187,14 @@
     "published_at": "2026-02-24T09:00:00.000000",
     "url": "/novel/arc-5/episode-021/",
     "character_count": 4987
+  },
+  {
+    "chapter_id": "CH022",
+    "episode_number": 22,
+    "arc_number": 6,
+    "title": "밤에 피어나는 장미 제22화",
+    "published_at": "2026-02-24T15:00:00.000000",
+    "url": "/novel/arc-6/episode-022/",
+    "character_count": 6010
   }
 ]
