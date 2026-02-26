@@ -232,5 +232,23 @@
     "published_at": "2026-02-25T15:00:00.000000",
     "url": "/novel/arc-6/episode-026/",
     "character_count": 4299
+  },
+  {
+    "chapter_id": "CH027",
+    "episode_number": 27,
+    "arc_number": 6,
+    "title": "밤에 피어나는 장미 제27화",
+    "published_at": "2026-02-25T21:00:00.000000",
+    "url": "/novel/arc-6/episode-027/",
+    "character_count": 4846
+  },
+  {
+    "chapter_id": "CH028",
+    "episode_number": 28,
+    "arc_number": 6,
+    "title": "밤에 피어나는 장미 제28화",
+    "published_at": "2026-02-26T03:00:00.000000",
+    "url": "/novel/arc-6/episode-028/",
+    "character_count": 4392
   }
 ]
