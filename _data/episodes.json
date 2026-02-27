@@ -295,7 +295,6 @@
     "published_at": "2026-02-27T09:00:00.000000",
     "url": "/novel/arc-7/episode-033/",
     "character_count": 5523
-  }
   },
   {
     "chapter_id": "CH034",
@@ -305,5 +304,14 @@
     "published_at": "2026-02-27T15:00:00.000000",
     "url": "/novel/arc-7/episode-034/",
     "character_count": 5687
+  },
+  {
+    "chapter_id": "CH035",
+    "episode_number": 35,
+    "arc_number": 7,
+    "title": "밤에 피어나는 장미 제35화",
+    "published_at": "2026-02-27T21:00:00.000000",
+    "url": "/novel/arc-7/episode-035/",
+    "character_count": 5523
   }
 ]
