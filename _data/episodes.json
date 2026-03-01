@@ -340,5 +340,32 @@
     "published_at": "2026-02-28T15:00:00.000000",
     "url": "/novel/arc-7/episode-038/",
     "character_count": 4736
+  },
+  {
+    "chapter_id": "CH039",
+    "episode_number": 39,
+    "arc_number": 7,
+    "title": "밤에 피어나는 장미 제39화",
+    "published_at": "2026-02-28T21:00:00.000000",
+    "url": "/novel/arc-7/episode-039/",
+    "character_count": 3983
+  },
+  {
+    "chapter_id": "CH040",
+    "episode_number": 40,
+    "arc_number": 8,
+    "title": "밤에 피어나는 장미 제40화",
+    "published_at": "2026-03-01T03:00:00.000000",
+    "url": "/novel/arc-8/episode-040/",
+    "character_count": 5423
+  },
+  {
+    "chapter_id": "CH041",
+    "episode_number": 41,
+    "arc_number": 8,
+    "title": "밤에 피어나는 장미 제41화",
+    "published_at": "2026-03-01T09:00:00.000000",
+    "url": "/novel/arc-8/episode-041/",
+    "character_count": 4906
   }
 ]
