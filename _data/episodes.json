@@ -1,5 +1,19 @@
 [
   {
+    "chapter": 1,
+    "title": "회귀 직후 환경 파악",
+    "arc": 1,
+    "date": "2026-03-03",
+    "character_count": 4144
+  },
+  {
+    "chapter": 2,
+    "title": "천살검록 비단 확인",
+    "arc": 1,
+    "date": "2026-03-03",
+    "character_count": 5504
+  },
+  {
     "chapter_id": "CH001",
     "episode_number": 1,
     "arc_number": 1,
@@ -270,15 +284,6 @@
     "character_count": 3096
   },
   {
-    "chapter_id": "CH031",
-    "episode_number": 31,
-    "arc_number": 6,
-    "title": "밤에 피어나는 장미 제31화",
-    "published_at": "2026-02-27T21:00:00.000000",
-    "url": "/novel/arc-6/episode-031/",
-    "character_count": 5821
-  },
-  {
     "chapter_id": "CH032",
     "episode_number": 32,
     "arc_number": 7,
@@ -304,6 +309,15 @@
     "published_at": "2026-02-27T15:00:00.000000",
     "url": "/novel/arc-7/episode-034/",
     "character_count": 5687
+  },
+  {
+    "chapter_id": "CH031",
+    "episode_number": 31,
+    "arc_number": 6,
+    "title": "밤에 피어나는 장미 제31화",
+    "published_at": "2026-02-27T21:00:00.000000",
+    "url": "/novel/arc-6/episode-031/",
+    "character_count": 5821
   },
   {
     "chapter_id": "CH035",
@@ -369,17 +383,21 @@
     "character_count": 4906
   },
   {
-    "chapter": 1,
-    "title": "회귀 직후 환경 파악",
-    "arc": 1,
-    "date": "2026-03-03",
-    "character_count": 4144
+    "chapter_id": "CH001",
+    "episode_number": 1,
+    "arc_number": 1,
+    "title": "검맥 1화",
+    "published_at": "2026-03-03T00:00:00.000000",
+    "url": "/novel/arc-1/episode-001/",
+    "character_count": 5632
   },
   {
-    "chapter": 2,
-    "title": "천살검록 비단 확인",
-    "arc": 1,
-    "date": "2026-03-03",
+    "chapter_id": "CH002",
+    "episode_number": 2,
+    "arc_number": 1,
+    "title": "검맥 2화",
+    "published_at": "2026-03-03T06:00:00.000000",
+    "url": "/novel/arc-1/episode-002/",
     "character_count": 5504
   }
 ]
