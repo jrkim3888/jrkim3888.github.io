@@ -5,3 +5,11 @@
   cover_thumb: /assets/images/rose_cover_thumb.png
   genre: 판타지
   subgenre: [로맨스, 복수극, 서양풍]
+
+검맥:
+  description: ""
+  cover_image: /assets/images/gummack_cover.png
+  cover_card: /assets/images/gummack_cover.png
+  cover_thumb: /assets/images/gummack_cover_thumb.png
+  genre: 무협
+  subgenre: [무협, 소설]
