@@ -5,6 +5,7 @@
   cover_thumb: /assets/images/rose_cover_thumb.png
   genre: 판타지
   subgenre: [로맨스, 복수극, 서양풍]
+  status: 완결
 
 검맥:
   description: "백산검문의 제자 하진. 사부의 배신으로 죽음을 맞이한 그가 회귀하여, 금기 비급 천살검록을 손에 넣고 복수를 준비한다."
@@ -13,3 +14,4 @@
   cover_thumb: /assets/images/gummack_cover_thumb.png
   genre: 무협
   subgenre: [회귀, 복수극, 동양풍]
+  status: 연재중

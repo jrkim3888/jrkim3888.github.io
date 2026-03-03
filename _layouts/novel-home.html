@@ -32,7 +32,7 @@ layout: archive
         {% if novel_info.description %}
           <p class="novel-card__desc">{{ novel_info.description }}</p>
         {% endif %}
-        <p class="novel-card__count">총 {{ cat_posts.size }}화 연재중</p>
+        <p class="novel-card__count">총 {{ cat_posts.size }}화 {% if novel_info.status == "완결" %}완결{% else %}연재중{% endif %}</p>
         <ul class="novel-card__recent">
           {% for post in recent %}
             <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
