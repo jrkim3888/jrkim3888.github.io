@@ -21,6 +21,13 @@
     "character_count": 4080
   },
   {
+    "chapter": 4,
+    "title": "상단 라인 확인",
+    "arc": 1,
+    "date": "2026-03-04",
+    "character_count": 5512
+  },
+  {
     "chapter_id": "CH001",
     "episode_number": 1,
     "arc_number": 1,
@@ -406,5 +413,14 @@
     "published_at": "2026-03-04T12:00:00.000000",
     "url": "/novel/arc-1/episode-003/",
     "character_count": 5503
+  },
+  {
+    "chapter_id": "CH004",
+    "episode_number": 4,
+    "arc_number": 1,
+    "title": "검맥 4화",
+    "published_at": "2026-03-04T21:00:00.000000",
+    "url": "/novel/arc-1/episode-004/",
+    "character_count": 5512
   }
 ]
