@@ -429,5 +429,21 @@
     "published_at": "2026-03-05T03:00:00.000000",
     "url": "/novel/arc-1/episode-005/",
     "character_count": 5519
+  },
+  {
+    "chapter_id": "CH006",
+    "episode_number": 6,
+    "arc_number": 1,
+    "title": "검맥 6화",
+    "published_at": "2026-03-05T09:00:00.000000",
+    "url": "/novel/arc-1/episode-006/",
+    "character_count": 5503
+  },
+  {
+    "chapter": 6,
+    "title": "백산검문 규율/분위기 소개",
+    "arc": 1,
+    "date": "2026-03-05",
+    "character_count": 5503
   }
 ]
