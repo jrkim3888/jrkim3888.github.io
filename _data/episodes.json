@@ -445,5 +445,21 @@
     "arc": 1,
     "date": "2026-03-05",
     "character_count": 5503
+  },
+  {
+    "chapter_id": "CH007",
+    "episode_number": 7,
+    "arc_number": 1,
+    "title": "검맥 7화",
+    "published_at": "2026-03-05T15:00:00.000000",
+    "url": "/novel/arc-1/episode-007/",
+    "character_count": 5500
+  },
+  {
+    "chapter": 7,
+    "title": "창고 장부의 실마리",
+    "arc": 1,
+    "date": "2026-03-05",
+    "character_count": 5500
   }
 ]
