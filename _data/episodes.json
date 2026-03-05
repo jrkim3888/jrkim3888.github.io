@@ -28,6 +28,13 @@
     "character_count": 5512
   },
   {
+    "chapter": 5,
+    "title": "현월진인 첫 조우 및 문파 입문 절차 관찰",
+    "arc": 1,
+    "date": "2026-03-05",
+    "character_count": 4119
+  },
+  {
     "chapter_id": "CH001",
     "episode_number": 1,
     "arc_number": 1,
@@ -53,15 +60,6 @@
     "published_at": "2026-02-19T21:00:00.000000",
     "url": "/novel/arc-2/episode-004/",
     "character_count": 6280
-  },
-  {
-    "chapter_id": "CH005",
-    "episode_number": 5,
-    "arc_number": 2,
-    "title": "밤에 피어나는 장미 제5화",
-    "published_at": "2026-02-20T03:00:00.000000",
-    "url": "/novel/arc-2/episode-005/",
-    "character_count": 6249
   },
   {
     "chapter_id": "CH006",
@@ -422,5 +420,14 @@
     "published_at": "2026-03-04T21:00:00.000000",
     "url": "/novel/arc-1/episode-004/",
     "character_count": 5512
+  },
+  {
+    "chapter_id": "CH005",
+    "episode_number": 5,
+    "arc_number": 1,
+    "title": "검맥 5화",
+    "published_at": "2026-03-05T03:00:00.000000",
+    "url": "/novel/arc-1/episode-005/",
+    "character_count": 5519
   }
 ]
