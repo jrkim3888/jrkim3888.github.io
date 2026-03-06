@@ -35,6 +35,27 @@
     "character_count": 4119
   },
   {
+    "chapter": 6,
+    "title": "검맥 6화",
+    "arc": 1,
+    "date": "2026-03-05",
+    "character_count": 5503
+  },
+  {
+    "chapter": 7,
+    "title": "검맥 7화",
+    "arc": 1,
+    "date": "2026-03-05",
+    "character_count": 5500
+  },
+  {
+    "chapter": 8,
+    "title": "검맥 8화",
+    "arc": 1,
+    "date": "2026-03-05",
+    "character_count": 5510
+  },
+  {
     "chapter_id": "CH001",
     "episode_number": 1,
     "arc_number": 1,
@@ -440,13 +461,6 @@
     "character_count": 5503
   },
   {
-    "chapter": 6,
-    "title": "백산검문 규율/분위기 소개",
-    "arc": 1,
-    "date": "2026-03-05",
-    "character_count": 5503
-  },
-  {
     "chapter_id": "CH007",
     "episode_number": 7,
     "arc_number": 1,
@@ -454,19 +468,5 @@
     "published_at": "2026-03-05T15:00:00.000000",
     "url": "/novel/arc-1/episode-007/",
     "character_count": 5500
-  },
-  {
-    "chapter": 7,
-    "title": "창고 장부의 실마리",
-    "arc": 1,
-    "date": "2026-03-05",
-    "character_count": 5500
-  },
-  {
-    "chapter": 8,
-    "title": "상단 라인의 가능성 확인",
-    "arc": 1,
-    "date": "2026-03-05",
-    "character_count": 5510
   }
 ]
