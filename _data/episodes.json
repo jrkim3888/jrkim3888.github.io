@@ -1,68 +1,5 @@
 [
   {
-    "chapter": 1,
-    "title": "회귀 직후 환경 파악",
-    "arc": 1,
-    "date": "2026-03-03",
-    "character_count": 4144
-  },
-  {
-    "chapter": 2,
-    "title": "천살검록 비단 확인",
-    "arc": 1,
-    "date": "2026-03-03",
-    "character_count": 5504
-  },
-  {
-    "chapter": 3,
-    "title": "천살검록 첫 단서 접근",
-    "arc": 1,
-    "date": "2026-03-04",
-    "character_count": 4080
-  },
-  {
-    "chapter": 4,
-    "title": "상단 라인 확인",
-    "arc": 1,
-    "date": "2026-03-04",
-    "character_count": 5512
-  },
-  {
-    "chapter": 5,
-    "title": "현월진인 첫 조우 및 문파 입문 절차 관찰",
-    "arc": 1,
-    "date": "2026-03-05",
-    "character_count": 4119
-  },
-  {
-    "chapter": 6,
-    "title": "검맥 6화",
-    "arc": 1,
-    "date": "2026-03-05",
-    "character_count": 5503
-  },
-  {
-    "chapter": 7,
-    "title": "검맥 7화",
-    "arc": 1,
-    "date": "2026-03-05",
-    "character_count": 5500
-  },
-  {
-    "chapter": 8,
-    "title": "검맥 8화",
-    "arc": 1,
-    "date": "2026-03-05",
-    "character_count": 5510
-  },
-  {
-    "chapter": 9,
-    "title": "검맥 9화",
-    "arc": 1,
-    "date": "2026-03-06",
-    "character_count": 5503
-  },
-  {
     "chapter_id": "CH001",
     "episode_number": 1,
     "arc_number": 1,
@@ -475,5 +412,75 @@
     "published_at": "2026-03-05T15:00:00.000000",
     "url": "/novel/arc-1/episode-007/",
     "character_count": 5500
+  },
+  {
+    "chapter": 1,
+    "title": "회귀 직후 환경 파악",
+    "arc": 1,
+    "date": "2026-03-03",
+    "character_count": 4144
+  },
+  {
+    "chapter": 2,
+    "title": "천살검록 비단 확인",
+    "arc": 1,
+    "date": "2026-03-03",
+    "character_count": 5504
+  },
+  {
+    "chapter": 3,
+    "title": "천살검록 첫 단서 접근",
+    "arc": 1,
+    "date": "2026-03-04",
+    "character_count": 4080
+  },
+  {
+    "chapter": 4,
+    "title": "상단 라인 확인",
+    "arc": 1,
+    "date": "2026-03-04",
+    "character_count": 5512
+  },
+  {
+    "chapter": 5,
+    "title": "현월진인 첫 조우 및 문파 입문 절차 관찰",
+    "arc": 1,
+    "date": "2026-03-05",
+    "character_count": 4119
+  },
+  {
+    "chapter": 6,
+    "title": "검맥 6화",
+    "arc": 1,
+    "date": "2026-03-05",
+    "character_count": 5503
+  },
+  {
+    "chapter": 7,
+    "title": "검맥 7화",
+    "arc": 1,
+    "date": "2026-03-05",
+    "character_count": 5500
+  },
+  {
+    "chapter": 8,
+    "title": "검맥 8화",
+    "arc": 1,
+    "date": "2026-03-05",
+    "character_count": 5510
+  },
+  {
+    "chapter": 9,
+    "title": "검맥 9화",
+    "arc": 1,
+    "date": "2026-03-06",
+    "character_count": 5503
+  },
+  {
+    "chapter": 10,
+    "title": "검맥 10화",
+    "arc": 1,
+    "date": "2026-03-07",
+    "character_count": 5533
   }
 ]
