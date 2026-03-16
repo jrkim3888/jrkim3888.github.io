@@ -65,7 +65,7 @@ author_profile: true
         </div>
         <ul class="catfilter-posts">
           {% for post in cat[1] %}
-            <li class="catfilter-posts__item" data-date="{{ post.date | date: '%s' }}" data-title="{{ post.title }}">
+            <li class="catfilter-posts__item" data-date="{{ post.date | date: '%s' }}" data-title="{{ post.title }}" data-chapter="{{ post.chapter }}">
               <a href="{{ post.url | relative_url }}" class="catfilter-posts__link">
                 <span class="catfilter-posts__title">{{ post.title }}</span>
                 <time class="catfilter-posts__date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y.%m.%d" }}</time>
@@ -88,12 +88,24 @@ author_profile: true
   var sorted = {};    // slug → already sorted flag
 
   // 날짜 내림차순, 같은 날짜면 제목 내림차순 (숫자 인식)
+  function parseChapterValue(item) {
+    var chap = parseInt(item.getAttribute('data-chapter'), 10);
+    return isNaN(chap) ? null : chap;
+  }
+
   function sortSection(section) {
     var slug = section.getAttribute('data-category');
     if (sorted[slug]) return;
     var list = section.querySelector('.catfilter-posts');
     var items = Array.prototype.slice.call(list.querySelectorAll('.catfilter-posts__item'));
     items.sort(function(a, b) {
+      var ca = parseChapterValue(a);
+      var cb = parseChapterValue(b);
+      if (ca !== null || cb !== null) {
+        ca = ca === null ? -Infinity : ca;
+        cb = cb === null ? -Infinity : cb;
+        if (cb !== ca) return cb - ca; // chapter 내림차순
+      }
       var da = parseInt(a.getAttribute('data-date'), 10);
       var db = parseInt(b.getAttribute('data-date'), 10);
       if (db !== da) return db - da; // 날짜 내림차순
