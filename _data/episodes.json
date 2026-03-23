@@ -787,5 +787,14 @@
     "published_at": "2026-03-23T03:00:00.000000",
     "url": "/novel/arc-1/episode-054/",
     "character_count": 5585
+  },
+  {
+    "chapter_id": "CH055",
+    "episode_number": 55,
+    "arc_number": 1,
+    "title": "검맥 55화",
+    "published_at": "2026-03-23T09:00:00.000000",
+    "url": "/novel/arc-1/episode-055/",
+    "character_count": 5529
   }
 ]
