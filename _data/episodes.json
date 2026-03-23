@@ -762,5 +762,30 @@
     "arc": 1,
     "date": "2026-03-22",
     "character_count": 5517
+  },
+  {
+    "chapter": 52,
+    "title": "검맥 52화",
+    "arc": 1,
+    "date": "2026-03-22",
+    "character_count": 5535
+  },
+  {
+    "chapter_id": "CH053",
+    "episode_number": 53,
+    "arc_number": 1,
+    "title": "검맥 53화",
+    "published_at": "2026-03-22T21:00:00.000000",
+    "url": "/novel/arc-1/episode-053/",
+    "character_count": 5547
+  },
+  {
+    "chapter_id": "CH054",
+    "episode_number": 54,
+    "arc_number": 1,
+    "title": "검맥 54화",
+    "published_at": "2026-03-23T03:00:00.000000",
+    "url": "/novel/arc-1/episode-054/",
+    "character_count": 5585
   }
 ]
