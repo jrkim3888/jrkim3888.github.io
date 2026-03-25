@@ -821,5 +821,14 @@
     "arc": 1,
     "date": "2026-03-24",
     "character_count": 4547
+  },
+  {
+    "chapter_id": "CH060",
+    "episode_number": 60,
+    "arc_number": 1,
+    "title": "검맥 60화",
+    "published_at": "2026-03-24T21:00:00.000000",
+    "url": "/novel/arc-1/episode-060/",
+    "character_count": 5500
   }
 ]
