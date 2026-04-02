@@ -928,22 +928,35 @@
     "arc": 1,
     "date": "2026-04-01",
     "character_count": 5581
-  }
-,
+  },
   {
     "chapter": 75,
     "title": "문턱의 웃음",
     "arc": 1,
     "date": "2026-04-01",
     "character_count": 5527
-  }
-,
+  },
   {
     "chapter": 76,
     "title": "검맥 76화",
     "arc": 1,
     "date": "2026-04-01",
     "character_count": 5502
+  },
+  {
+    "chapter": 77,
+    "title": "유서윤 첫 교류",
+    "arc": 1,
+    "date": "2026-04-01",
+    "character_count": 4561
+  },
+  {
+    "chapter_id": "CH078",
+    "episode_number": 78,
+    "arc_number": 1,
+    "title": "검맥 78화",
+    "published_at": "2026-04-02T03:00:00.000000",
+    "url": "/novel/arc-1/episode-078/",
+    "character_count": 5530
   }
 ]
-
