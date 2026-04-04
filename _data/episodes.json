@@ -986,5 +986,21 @@
     "arc": 1,
     "date": "2026-04-04",
     "character_count": 5546
+  },
+  {
+    "chapter_id": "CH086",
+    "episode_number": 86,
+    "arc_number": 1,
+    "title": "검맥 86화",
+    "published_at": "2026-04-04T15:00:00.000000",
+    "url": "/novel/arc-1/episode-086/",
+    "character_count": 5550
+  },
+  {
+    "chapter": 87,
+    "title": "천살검록 첫 단서 접근",
+    "arc": 1,
+    "date": "2026-04-04",
+    "character_count": 4188
   }
 ]
